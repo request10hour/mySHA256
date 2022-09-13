@@ -98,6 +98,7 @@ ssh key 추가
 cat ~/.ssh/id_ed25519.pub
 # 나오는 내용 복사
 ```
+Github 페이지에서)<br>
 프로필 클릭 -> Settings -> SSH and GPG keys -> New SSH key
 
 `Title` 아무거나 입력<br>
