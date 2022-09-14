@@ -88,7 +88,7 @@ ssh-add ~/.ssh/id_ed25519
 
   `-K Load resident keys from a FIDO authenticator.`
 
-  Windows에선 해당옵션 사용시 오류가 난다. Mac에서만 사용 가능하며, Mac의 키체인에 ssh key를 등록하는 옵션이라고 한다.
+  Linux(WSL)에선 해당옵션 사용시 오류가 난다. Mac에서만 사용 가능하며, Mac의 키체인에 ssh key를 등록하는 옵션이라고 한다.
 
 <br>
 
