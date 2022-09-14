@@ -1,5 +1,5 @@
-SRCS=sqrt.c nthprime.c
-OBJS=sqrt.o nthprime.o
+SRCS=mysqrt.c mycbrt.c nthprime.c
+OBJS=mysqrt.o mycbrt.o nthprime.o
 
 all:	libmath clean
 
@@ -13,7 +13,7 @@ clean:
 		rm -rf $(OBJS)
 
 fclean:	clean
-		rm -rf libmath
+		rm -rf libmath test
 
 test:	libmath clean
 		gcc -o test testmain.c libmath

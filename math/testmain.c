@@ -17,7 +17,7 @@ int main()
 	// H값 구하기
 	double sqr;
 	int a;
-	printf("H list\n");
+	printf("[H value] : \n");
 	for (unsigned int i = 0; i < 8; i++)
 	{
 		sqr = my_sqrt(nthprime(i + 1));
@@ -28,7 +28,7 @@ int main()
 		printf("%08x\n", a);
 	}
 	// K값 구하기
-	printf("K list\n");
+	printf("\n[K value] : \n");
 	for (unsigned int i = 0; i < 64; i++)
 	{
 		sqr = my_cbrt(nthprime(i + 1));

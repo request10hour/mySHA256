@@ -5,9 +5,10 @@
 int main(int argc, char **argv)
 {
 	printf("origin text : %s\n\n", argv[1]);
-
+	if (!argv[1])
+		return (printf("input origin text in first argument\n"));
 	// preprocess test
-	printf("preprocessed\n");
+	printf("[preprocessed] : \n");
 	char *chunk = preprocess(argv[1]);
 	for (size_t j = 0; j < 64; j++)
 	{
@@ -23,7 +24,7 @@ int main(int argc, char **argv)
 
 	// queuing test
 	printf("\n");
-	printf("this is W\n");
+	printf("[W value(0~15)] : \n");
 	unsigned int *w = queuing(argv[1]);
 	for (size_t j = 0; j < 64; j++)
 	{

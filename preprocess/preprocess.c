@@ -1,5 +1,4 @@
-#include "preprocess.h"
-
+// text를 chunk로 바꾸기 (1byte 64block)
 unsigned char *preprocess(char *text)
 {
 	static unsigned char chunk[64] = {
@@ -16,6 +15,7 @@ unsigned char *preprocess(char *text)
 	return chunk;
 }
 
+// text -> chunk -> W (4byte 64block)
 unsigned int *queuing(char *text)
 {
 	static unsigned int w[64] = {
