@@ -14,27 +14,29 @@ int main()
 	// {
 	// 	printf("[%d]\ncbrt : %.51f\n", i, my_cbrt(i));
 	// }
-	//H값 구하기
+	// H값 구하기
 	double sqr;
 	int a;
 	printf("H list\n");
 	for (unsigned int i = 0; i < 8; i++)
 	{
 		sqr = my_sqrt(nthprime(i + 1));
-		printf("[%f - %d = %f]", sqr, (int)sqr, sqr - (int)sqr);
-		printf("[%f]", (sqr - (int)sqr) * 0x100000000);
-		a =  (unsigned)((sqr - (int)sqr) * 0x100000000);
-		printf("%u, %x\n", a, a);
+		// printf("[%f - %d = %f]", sqr, (int)sqr, sqr - (int)sqr);
+		// printf("[%f]", (sqr - (int)sqr) * 0x100000000);
+		a = (unsigned)((sqr - (int)sqr) * 0x100000000);
+		// printf("%u, %x\n", a, a);
+		printf("%08x\n", a);
 	}
-	//K값 구하기
+	// K값 구하기
 	printf("K list\n");
 	for (unsigned int i = 0; i < 64; i++)
 	{
 		sqr = my_cbrt(nthprime(i + 1));
-		printf("[%f - %d = %f]", sqr, (int)sqr, sqr - (int)sqr);
-		printf("[%f]", (sqr - (int)sqr) * 0x100000000);
-		a =  (unsigned)((sqr - (int)sqr) * 0x100000000);
-		printf("%u, %x\n", a, a);
+		// printf("[%f - %d = %f]", sqr, (int)sqr, sqr - (int)sqr);
+		// printf("[%f]", (sqr - (int)sqr) * 0x100000000);
+		a = (unsigned)((sqr - (int)sqr) * 0x100000000);
+		// printf("%u, %x\n", a, a);
+		printf("%08x\n", a);
 	}
 	// //prime
 	// for (unsigned int i = 1; i <= 100; i++)
