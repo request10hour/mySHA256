@@ -1,19 +1,19 @@
 SRCS=mysqrt.c mycbrt.c nthprime.c
 OBJS=mysqrt.o mycbrt.o nthprime.o
 
-all:	libmath clean
+all:	libmath.a clean
 
 %o:			%c
 			gcc -o $@
 
-libmath:	$(OBJS)
-			ar rcs libmath $(OBJS)
+libmath.a:	$(OBJS)
+			ar rcs libmath.a $(OBJS)
 
 clean:
 		rm -rf $(OBJS)
 
 fclean:	clean
-		rm -rf libmath test
+		rm -rf libmath.a test
 
-test:	libmath clean
-		gcc -o test testmain.c libmath
+test:	libmath.a clean
+		gcc -o test testmain.c libmath.a

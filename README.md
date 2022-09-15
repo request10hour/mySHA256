@@ -73,3 +73,20 @@ h및 k값의 initialize 과정
 w값의 연산 과정
 define을 이용한 매크로 함수 이용
 HKW 정상적으로 설정되었는지 중간 통합 테스트 진행
+
+`preprocess/preprocess.c`
+```c
+#define RIGHTROTATE(uint, num) ((uint >> num) | (uint << 32 - num))
+#define RIGHTSHIFT(uint, num) (uint >> num)
+
+```
+
+`initialize.c`
+```c
+#include <stdio.h>
+#define EXTRACT_BINARY_UNITS(var) (var & 0x01 ? 0x01 : 0x00)
+#define BINARY32PRINTF(var) for (size_t j = 0; j < 32; j++) printf("%d", EXTRACT_BINARY_UNITS(var >> (31 - j)))
+```
+
+compression 작업 -> sha256을 문자열로 바꾸는 작업 -> 출력까지 진행
+사실 문자열출력이 아니라 메모리공간에 저장하고싶지만...malloc 사용 없이는 힘들듯...

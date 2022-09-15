@@ -1,16 +1,16 @@
 SRCS=mymemmove.c
 OBJS=mymemmove.o
 
-all:	libutil clean
+all:	libutil.a clean
 
 %o:			%c
 			gcc -o $@
 
-libutil:	$(OBJS)
-			ar rcs libutil $(OBJS)
+libutil.a:	$(OBJS)
+			ar rcs libutil.a $(OBJS)
 
 clean:
 		rm -rf $(OBJS)
 
 fclean:	clean
-		rm -rf libutil
+		rm -rf libutil.a

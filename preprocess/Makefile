@@ -1,19 +1,19 @@
 SRCS=preprocess.c
 OBJS=preprocess.o
 
-all:	libprep clean
+all:	libprep.a clean
 
 %o:			%c
 			gcc -o $@
 
-libprep:	$(OBJS)
-			ar rcs libprep $(OBJS)
+libprep.a:	$(OBJS)
+			ar rcs libprep.a $(OBJS)
 
 clean:
 		rm -rf $(OBJS)
 
 fclean:	clean
-		rm -rf libprep test
+		rm -rf libprep.a test
 
-test:	libprep clean
-		gcc -o test testmain.c libprep
+test:	libprep.a clean
+		gcc -o test testmain.c libprep.a

@@ -22,10 +22,10 @@ int main(int argc, char **argv)
 	}
 	printf("\n");
 
-	// queuing test
+	// w_init test
 	printf("\n");
 	printf("[W value(0~15)] : \n");
-	unsigned int *w = queuing(argv[1]);
+	unsigned int *w = w_init(argv[1]);
 	for (size_t j = 0; j < 64; j++)
 	{
 		if (!(j % 2))
