@@ -8,6 +8,8 @@ nthprime 함수 - n번째 소수 찾기<br>
 
 위에서 구현한 세 함수를 조합하여 SHA-256 암호화에 사용되는 H 및 K 값 구하기 단위테스트로 동작 확인
 
+추가할내용) Newton–Raphson method 란 무엇인지
+
 2일차 :
 ---
 my_memmove 함수 - double형을 unsigned long long에 비트옮기기 가능(형변환X)<br>
@@ -66,3 +68,8 @@ initialize 작업 진행중...H값, K값, W값을 한군데로 모으기 위해.
 
 3일차:
 ---
+추가할 내용)
+h및 k값의 initialize 과정
+w값의 연산 과정
+define을 이용한 매크로 함수 이용
+HKW 정상적으로 설정되었는지 중간 통합 테스트 진행

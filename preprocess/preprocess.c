@@ -1,3 +1,9 @@
+#define EXTRACT_BINARY_UNITS(var) (var & 0x01 ? 0x01 : 0x00)
+#define BINARY32PRINTF(var)         \
+	for (size_t j = 0; j < 32; j++) \
+	printf("%d", EXTRACT_BINARY_UNITS(var >> (31 - j)))
+#include <stdio.h>
+
 // text를 chunk로 바꾸기 (1byte 64block)
 unsigned char *preprocess(char *text)
 {
@@ -14,8 +20,8 @@ unsigned char *preprocess(char *text)
 	chunk[63] = i * 8;
 	return chunk;
 }
-
-// text -> chunk -> W (4byte 64block)
+#define RIGHTROTATE(uint, num) ((uint >> num) | (uint << 32 - num))
+#define RIGHTSHIFT(uint, num) (uint >> num)
 unsigned int *queuing(char *text)
 {
 	static unsigned int w[64] = {
@@ -30,5 +36,13 @@ unsigned int *queuing(char *text)
 			w[i] |= pp[i * 4 + j];
 		}
 	}
+	unsigned int s0, s1;
+	for (unsigned int i = 16; i < 64; i++)
+	{
+		s0 = RIGHTROTATE(w[i - 15], 7) ^ RIGHTROTATE(w[i - 15], 18) ^ RIGHTSHIFT(w[i - 15], 3);
+		s1 = RIGHTROTATE(w[i - 2], 17) ^ RIGHTROTATE(w[i - 2], 19) ^ RIGHTSHIFT(w[i - 2], 10);
+		w[i] = w[i - 16] + s0 + w[i - 7] + s1;
+	}
+
 	return w;
 }
