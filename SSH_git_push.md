@@ -119,3 +119,10 @@ ssh -T git@github.com
 
 
 이후 git repository에서 HTTPS 방식이 아닌 SSH 선택하여 진행
+
+220926 추가
+---
+`Bad owner or permissions on /home/opc/.ssh/config` 오류<br>
+```shell
+chmod 600 ~/.ssh/
+```
